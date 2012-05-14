@@ -216,7 +216,7 @@ describe("Jasmine", function () {
     describe("jasmine-jquery matchers", function () {
         //https://github.com/velesin/jasmine-jquery
 
-        describe("expect(elem).toBe(selector)", function () {
+        describe("expect($elem).toBe(selector)", function () {
             it("passes if the element matches the specified selector", function () {
                 var elem = $('<div id="container"></div>');
                 expect(elem).toBe('div');
@@ -225,7 +225,7 @@ describe("Jasmine", function () {
             });
         });
 
-        describe("expect(elem).toBeChecked()", function () {
+        describe("expect($elem).toBeChecked()", function () {
             it("passes if the element is checked", function () {
                 var elem = $('<input type="checkbox" checked="checked"/>'),
                     elem2 = $('<input type="checkbox"/>');
@@ -246,7 +246,7 @@ describe("expect(elem).toBeEmpty()", function () {
             });
         });*/
 
-        describe("expect(elem).toBeHidden()", function () {
+        describe("expect($elem).toBeHidden()", function () {
             it("passes if the element is hidden", function () {
                 setFixtures('<div id="foo" style="display:none">foo</div><div id="bar">bar</div>');
 
@@ -255,7 +255,7 @@ describe("expect(elem).toBeEmpty()", function () {
             });
         });
 
-        describe("expect(elem).toBeSelected()", function () {
+        describe("expect($elem).toBeSelected()", function () {
             it("passes if the element is selected", function () {
                 var elem = $('<option selected="selected"></option>'),
                     elem2 = $('<option></option>');
@@ -265,7 +265,7 @@ describe("expect(elem).toBeEmpty()", function () {
             });
         });
 
-        describe("expect(elem).toBeVisible()", function () {
+        describe("expect($elem).toBeVisible()", function () {
             it("passes if the element is visible", function () {
                 setFixtures('<span id="foo">foo</span><span id="bar" style="display:none;">bar</span>');
 
@@ -274,7 +274,7 @@ describe("expect(elem).toBeEmpty()", function () {
             });
         });
 
-        describe("expect(elem).toContain()", function () {
+        describe("expect($elem).toContain()", function () {
             it("passes if the element contains elements that match the specified selector", function () {
                 var elem = $('<div><span class="foo">foo</span></div>');
                 expect(elem).toContain('span');
@@ -283,7 +283,7 @@ describe("expect(elem).toBeEmpty()", function () {
             });
         });
 
-        describe("expect(elem).toExist()", function () {
+        describe("expect($elem).toExist()", function () {
             it("passes if the element exisits in the document", function () {
                 setFixtures('<div id="foo">hello</div>');
                 var elem = $('div#foo');
@@ -291,7 +291,7 @@ describe("expect(elem).toBeEmpty()", function () {
             });
         });
 
-        describe("expect(elem).toHaveAttr()", function () {
+        describe("expect($elem).toHaveAttr(attr)", function () {
             it("passes if the element's attribute matches", function () {
                 var elem = $('<div data-country="jamaica">Usain Bolt</div>');
                 expect(elem).toHaveAttr('data-country');
@@ -299,15 +299,15 @@ describe("expect(elem).toBeEmpty()", function () {
             });
         });
 
-        describe("expect(elem).toHaveProp()", function () {
-            it("passes of the element's propertt matches", function () {
+        describe("expect($elem).toHaveProp(prop)", function () {
+            it("passes if the element's property matches", function () {
                 setFixtures('<input id="check1" type="checkbox" checked="checked">');
                 var elem = $('#check1');
                 expect(elem).toHaveProp('checked');
             });
         });
 
-        describe("expect(event).toHaveBeenTriggeredOn(elem)", function () {
+        describe("expect(event).toHaveBeenTriggeredOn($elem)", function () {
             it("passes if the event is triggered on the specified element", function () {
 
                 setFixtures('<button id="show"/>');
@@ -322,7 +322,7 @@ describe("expect(elem).toBeEmpty()", function () {
             });
         });
 
-        describe("expect(event).toHaveBeenPreventedOn(elem)", function () {
+        describe("expect(event).toHaveBeenPreventedOn($elem)", function () {
             it("passes if the default event has been prevented on the specified element", function () {
 
                 setFixtures('<button id="show"/>');
@@ -338,14 +338,14 @@ describe("expect(elem).toBeEmpty()", function () {
             });
         });
 
-        describe("expect(elem).toHaveClass(className)", function () {
+        describe("expect($elem).toHaveClass(className)", function () {
             it("passes if the element has a specified className", function () {
                 var elem = $('<div class="some-class"></div>');
                 expect(elem).toHaveClass("some-class");
             });
         });
 
-        describe("expect(elem).toHaveData()", function () {
+        describe("expect($elem).toHaveData(data)", function () {
             it("passes if the data of the element matches", function () {
                 var elem = $('<div data-country="jamaica">Usain Bolt</div>');
                 expect(elem).toHaveData('country');
@@ -353,7 +353,7 @@ describe("expect(elem).toBeEmpty()", function () {
             });
         });
 
-        describe("expect(elem).toHaveHtml()", function () {
+        describe("expect($elem).toHaveHtml(html)", function () {
             it("pass if HTML contents of the element matches", function () {
                 var elem = $('<div id="foo"><span>bar</span><span>foo</span></div>');
                 expect(elem).toHaveHtml('<span>bar</span><span>foo</span>');
@@ -361,14 +361,14 @@ describe("expect(elem).toBeEmpty()", function () {
             });
         });
 
-        describe("expect(elem).toHaveId(id)", function () {
+        describe("expect($elem).toHaveId(id)", function () {
             it("passes if the element has a specified id", function () {
                 var elem = $('<div id="foo"></div>');
                 expect(elem).toHaveId("foo");
             });
         });
 
-        describe("expect(elem).toHaveText()", function () {
+        describe("expect($elem).toHaveText(text)", function () {
             it("passes if elements combined text content matches the specified text", function () {
 
                 var elem = $('<div><span>Hello World</span></div>'),
@@ -383,7 +383,7 @@ describe("expect(elem).toBeEmpty()", function () {
             });
         });
 
-        describe("expect(elem).toHaveValue()", function () {
+        describe("expect($elem).toHaveValue(value)", function () {
             it("passes if an element has a specified value", function () {
                 var elem = $('<input type="text" value="blue"/>');
                 expect(elem).toHaveValue('blue');
@@ -391,7 +391,7 @@ describe("expect(elem).toBeEmpty()", function () {
             });
         });
 
-        describe("expect(elem).toBeDisabled()", function () {
+        describe("expect($elem).toBeDisabled()", function () {
             it("passes if an element is disabled", function () {
 
                 var elem = $('<input type="submit" disabled="disabled"/>'),
@@ -402,7 +402,7 @@ describe("expect(elem).toBeEmpty()", function () {
             });
         });
 
-        describe("expect(elem).toBeFocused()", function () {
+        describe("expect($elem).toBeFocused()", function () {
             it("passes if an element has focus", function () {
 
                 setFixtures('<button id="submit"/>');
@@ -418,7 +418,7 @@ describe("expect(elem).toBeEmpty()", function () {
             });
         });
 
-        describe("expect(elem).toHandle(eventName)", function () {
+        describe("expect($elem).toHandle(eventName)", function () {
             it("passes if the specifed event type has been attached to the element", function () {
 
                 setFixtures('<form id="myForm"><input type="text"/><input type="submit" /></form>');
@@ -431,7 +431,7 @@ describe("expect(elem).toBeEmpty()", function () {
             });
         });
 
-        describe("expect(elem).toHandleWith(eventName, eventHandler)", function () {
+        describe("expect($elem).toHandleWith(eventName, eventHandler)", function () {
             it("passes if the specifed event type and handler have been attached to the element", function () {
 
                 setFixtures('<form id="myForm"><input type="text"/><input type="submit" /></form>');
@@ -460,10 +460,114 @@ describe("expect(elem).toBeEmpty()", function () {
 			});
 		});
 /*
-            describe("expect(x).INSERT();", function () {
+            describe("expect(x).toBeElement();", function () {
                 it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
+                    expect().toBeElement();
+                    expect().not.toBeElement();
+                });
+            });
+
+            describe("expect(x).toBeArray();", function () {
+                it("passes if ", function () {
+                    expect().toBeArray();
+                    expect().not.toBeArray();
+                });
+            });
+
+            describe("expect(x).toBeArguments();", function () {
+                it("passes if ", function () {
+                    expect().toBeArguments();
+                    expect().not.toBeArguments();
+                });
+            });
+
+            describe("expect(x).toBeFunction();", function () {
+                it("passes if ", function () {
+                    expect().toBeFunction();
+                    expect().not.toBeFunction();
+                });
+            });
+
+            describe("expect(x).toBeString();", function () {
+                it("passes if ", function () {
+                    expect().toBeString();
+                    expect().not.toBeString();
+                });
+            });
+
+            describe("expect(x).toBeNumber();", function () {
+                it("passes if ", function () {
+                    expect().toBeNumber();
+                    expect().not.toBeNumber();
+                });
+            });
+
+            describe("expect(x).toBeBoolean();", function () {
+                it("passes if ", function () {
+                    expect().toBeBoolean();
+                    expect().not.toBeBoolean();
+                });
+            });
+
+            describe("expect(x).toBeDate();", function () {
+                it("passes if ", function () {
+                    expect().toBeDate();
+                    expect().not.toBeDate();
+                });
+            });
+
+            describe("expect(x).toBeRegExp();", function () {
+                it("passes if ", function () {
+                    expect().toBeRegExp();
+                    expect().not.toBeRegExp();
+                });
+            });
+
+            describe("expect(x).toBeNaN();", function () {
+                it("passes if ", function () {
+                    expect().toBeNaN();
+                    expect().not.toBeNaN();
+                });
+            });
+            describe("expect(x).toBeNull();", function () {
+                it("passes if ", function () {
+                    expect().toBeNull();
+                    expect().not.toBeNull();
+                });
+            });
+
+            describe("expect(x).toBeUndefined();", function () {
+                it("passes if ", function () {
+                    expect().toBeUndefined();
+                    expect().not.toBeUndefined();
+                });
+            });
+
+            describe("expect(x).toBeCompact();", function () {
+                it("passes if ", function () {
+                    expect().toBeCompact();
+                    expect().not.toBeCompact();
+                });
+            });
+
+            describe("expect(x).toBeFlat();", function () {
+                it("passes if ", function () {
+                    expect().toBeFlat();
+                    expect().not.toBeFlat();
+                });
+            });
+
+            describe("expect(x).toHaveUniqueValues();", function () {
+                it("passes if ", function () {
+                    expect().toHaveUniqueValues();
+                    expect().not.toHaveUniqueValues();
+                });
+            });
+
+            describe("expect(x).toBeWithout();", function () {
+                it("passes if ", function () {
+                    expect().toBeWithout();
+                    expect().not.toBeWithout();
                 });
             });
 
@@ -474,128 +578,24 @@ describe("expect(elem).toBeEmpty()", function () {
                 });
             });
 
-            describe("expect(x).INSERT();", function () {
+            describe("expect(x).toInclude();", function () {
                 it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
+                    expect().toInclude();
+                    expect().not.toInclude();
                 });
             });
 
-            describe("expect(x).INSERT();", function () {
+            describe("expect(x).allToSatisfy();", function () {
                 it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
+                    expect().allToSatisfy();
+                    expect().not.allToSatisfy();
                 });
             });
 
-            describe("expect(x).INSERT();", function () {
+            describe("expect(x).anyToSatisfy();", function () {
                 it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
-                });
-            });
-
-            describe("expect(x).INSERT();", function () {
-                it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
-                });
-            });
-
-            describe("expect(x).INSERT();", function () {
-                it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
-                });
-            });
-
-            describe("expect(x).INSERT();", function () {
-                it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
-                });
-            });
-
-            describe("expect(x).INSERT();", function () {
-                it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
-                });
-            });
-
-            describe("expect(x).INSERT();", function () {
-                it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
-                });
-            });
-            describe("expect(x).INSERT();", function () {
-                it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
-                });
-            });
-
-            describe("expect(x).INSERT();", function () {
-                it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
-                });
-            });
-
-            describe("expect(x).INSERT();", function () {
-                it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
-                });
-            });
-
-            describe("expect(x).INSERT();", function () {
-                it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
-                });
-            });
-
-            describe("expect(x).INSERT();", function () {
-                it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
-                });
-            });
-
-            describe("expect(x).INSERT();", function () {
-                it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
-                });
-            });
-
-            describe("expect(x).INSERT();", function () {
-                it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
-                });
-            });
-
-            describe("expect(x).INSERT();", function () {
-                it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
-                });
-            });
-
-            describe("expect(x).INSERT();", function () {
-                it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
-                });
-            });
-
-            describe("expect(x).INSERT();", function () {
-                it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
+                    expect().anyToSatisfy();
+                    expect().not.anyToSatisfy();
                 });
             });
 */
