@@ -1,4 +1,4 @@
-/*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent  */
+/*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent, document  */
 /*jslint    sloppy: true  */
 
 describe("Jasmine", function () {
@@ -235,7 +235,7 @@ describe("Jasmine", function () {
             });
         });
 
-/* overridden by jasmine-underscore.js        
+/* overridden by jasmine-underscore.js
 describe("expect(elem).toBeEmpty()", function () {
             it("passes if the element is empty", function () {
                 var elem = $('<p></p>'),
@@ -451,153 +451,174 @@ describe("expect(elem).toBeEmpty()", function () {
         });
     });
 
-	describe("jasmine-underscore matchers", function () {
+    describe("jasmine-underscore matchers", function () {
 
-		describe("expect(x).toBeEmpty();", function () {
-			it("passes if x is empty", function () {
-				expect([]).toBeEmpty();
-				expect([1]).not.toBeEmpty();
+        describe("expect(x).toBeEmpty();", function () {
+            it("passes if x is empty", function () {
+                expect([]).toBeEmpty();
+                expect([1]).not.toBeEmpty();
+            });
+        });
+
+        describe("expect(x).toBeElement();", function () {
+            it("passes if x is an HTMLNode", function () {
+                expect(document.body).toBeElement();
+                expect(1).not.toBeElement();
+            });
+        });
+
+        describe("expect(x).toBeArray();", function () {
+            it("passes if x is an array ", function () {
+                expect([1]).toBeArray();
+                expect(1).not.toBeArray();
+            });
+        });
+
+        describe("expect(x).toBeArguments();", function () {
+            it("passes if x is an arguments object", function () {
+
+                function someFunction(arg) {
+                    expect(arguments).toBeArguments();
+                    expect(1).not.toBeArguments();
+                    return arg;
+                }
+
+				someFunction('go');
 			});
 		});
+
+        describe("expect(x).toBeFunction();", function () {
+            it("passes if c is a function", function () {
+                expect(function () { return 1; }).toBeFunction();
+                expect(1).not.toBeFunction();
+            });
+        });
+
+        describe("expect(x).toBeString();", function () {
+            it("passes if x is a string", function () {
+                expect('1').toBeString();
+                expect(1).not.toBeString();
+            });
+        });
+
+        describe("expect(x).toBeNumber();", function () {
+            it("passes if ", function () {
+                expect(1).toBeNumber();
+                expect('1').not.toBeNumber();
+            });
+        });
+
+        describe("expect(x).toBeBoolean();", function () {
+            it("passes if x is a boolean", function () {
+                expect(true).toBeBoolean();
+                expect(1).not.toBeBoolean();
+            });
+        });
+
+        describe("expect(x).toBeDate();", function () {
+            it("passes if ", function () {
+
+				var now = new Date();
+				expect(now).toBeDate();
+                expect(1).not.toBeDate();
+            });
+        });
+
+        describe("expect(x).toBeRegExp();", function () {
+            it("passes if x is a regular expression", function () {
+
+				var re = /ab+c/;
+				expect(re).toBeRegExp();
+                expect(1).not.toBeRegExp();
+            });
+        });
+
+        describe("expect(x).toBeNaN();", function () {
+            it("passes if x is not a NaN", function () {
+
+				var name = 'John',
+					age = 20,
+					sum = name * age;
+
+				expect(NaN).toBeNaN();
+				expect(sum).toBeNaN();
+                expect(1).not.toBeNaN();
+
+            });
+        });
+
+        describe("expect(x).toBeNull();", function () {
+            it("passes if ", function () {
+
+				var foo = null;
+
+				expect(null).toBeNull();
+				expect(foo).toBeNull();
+                expect(1).not.toBeNull();
+
+            });
+        });
+
+        describe("expect(x).toBeUndefined();", function () {
+            it("passes if x is undefined", function () {
+
+				var foo;
+
+				expect(undefined).toBeUndefined();
+				expect(foo).toBeUndefined();
+                expect(1).not.toBeUndefined();
+
+            });
+        });
+
+        describe("expect(x).toBeCompact();", function () {
+            it("passes if ", function () {
+                expect().toBeCompact();
+                expect().not.toBeCompact();
+            });
+        });
 /*
-            describe("expect(x).toBeElement();", function () {
-                it("passes if ", function () {
-                    expect().toBeElement();
-                    expect().not.toBeElement();
-                });
+        describe("expect(x).toBeFlat();", function () {
+            it("passes if ", function () {
+                expect().toBeFlat();
+                expect().not.toBeFlat();
             });
+        });
 
-            describe("expect(x).toBeArray();", function () {
-                it("passes if ", function () {
-                    expect().toBeArray();
-                    expect().not.toBeArray();
-                });
+        describe("expect(x).toHaveUniqueValues();", function () {
+            it("passes if ", function () {
+                expect().toHaveUniqueValues();
+                expect().not.toHaveUniqueValues();
             });
+        });
 
-            describe("expect(x).toBeArguments();", function () {
-                it("passes if ", function () {
-                    expect().toBeArguments();
-                    expect().not.toBeArguments();
-                });
+        describe("expect(x).toBeWithout();", function () {
+            it("passes if ", function () {
+                expect().toBeWithout();
+                expect().not.toBeWithout();
             });
+        });
 
-            describe("expect(x).toBeFunction();", function () {
-                it("passes if ", function () {
-                    expect().toBeFunction();
-                    expect().not.toBeFunction();
-                });
+        describe("expect(x).toInclude();", function () {
+            it("passes if ", function () {
+                expect().toInclude();
+                expect().not.toInclude();
             });
+        });
 
-            describe("expect(x).toBeString();", function () {
-                it("passes if ", function () {
-                    expect().toBeString();
-                    expect().not.toBeString();
-                });
+        describe("expect(x).allToSatisfy();", function () {
+            it("passes if ", function () {
+                expect().allToSatisfy();
+                expect().not.allToSatisfy();
             });
+        });
 
-            describe("expect(x).toBeNumber();", function () {
-                it("passes if ", function () {
-                    expect().toBeNumber();
-                    expect().not.toBeNumber();
-                });
+        describe("expect(x).anyToSatisfy();", function () {
+            it("passes if ", function () {
+                expect().anyToSatisfy();
+                expect().not.anyToSatisfy();
             });
-
-            describe("expect(x).toBeBoolean();", function () {
-                it("passes if ", function () {
-                    expect().toBeBoolean();
-                    expect().not.toBeBoolean();
-                });
-            });
-
-            describe("expect(x).toBeDate();", function () {
-                it("passes if ", function () {
-                    expect().toBeDate();
-                    expect().not.toBeDate();
-                });
-            });
-
-            describe("expect(x).toBeRegExp();", function () {
-                it("passes if ", function () {
-                    expect().toBeRegExp();
-                    expect().not.toBeRegExp();
-                });
-            });
-
-            describe("expect(x).toBeNaN();", function () {
-                it("passes if ", function () {
-                    expect().toBeNaN();
-                    expect().not.toBeNaN();
-                });
-            });
-            describe("expect(x).toBeNull();", function () {
-                it("passes if ", function () {
-                    expect().toBeNull();
-                    expect().not.toBeNull();
-                });
-            });
-
-            describe("expect(x).toBeUndefined();", function () {
-                it("passes if ", function () {
-                    expect().toBeUndefined();
-                    expect().not.toBeUndefined();
-                });
-            });
-
-            describe("expect(x).toBeCompact();", function () {
-                it("passes if ", function () {
-                    expect().toBeCompact();
-                    expect().not.toBeCompact();
-                });
-            });
-
-            describe("expect(x).toBeFlat();", function () {
-                it("passes if ", function () {
-                    expect().toBeFlat();
-                    expect().not.toBeFlat();
-                });
-            });
-
-            describe("expect(x).toHaveUniqueValues();", function () {
-                it("passes if ", function () {
-                    expect().toHaveUniqueValues();
-                    expect().not.toHaveUniqueValues();
-                });
-            });
-
-            describe("expect(x).toBeWithout();", function () {
-                it("passes if ", function () {
-                    expect().toBeWithout();
-                    expect().not.toBeWithout();
-                });
-            });
-
-            describe("expect(x).INSERT();", function () {
-                it("passes if ", function () {
-                    expect().INSERT();
-                    expect().not.INSERT();
-                });
-            });
-
-            describe("expect(x).toInclude();", function () {
-                it("passes if ", function () {
-                    expect().toInclude();
-                    expect().not.toInclude();
-                });
-            });
-
-            describe("expect(x).allToSatisfy();", function () {
-                it("passes if ", function () {
-                    expect().allToSatisfy();
-                    expect().not.allToSatisfy();
-                });
-            });
-
-            describe("expect(x).anyToSatisfy();", function () {
-                it("passes if ", function () {
-                    expect().anyToSatisfy();
-                    expect().not.anyToSatisfy();
-                });
-            });
+        });
 */
     });
 });
