@@ -4,9 +4,8 @@
 describe("jQuery", function () {
 	describe("Utility functions", function () {
 	    describe("$.inArray()", function () {
-
+			var myArray = [];
 			beforeEach(function () {
-				var myArray = [];
 				myArray = ['node', 'base', 'rhino'];
 			});
 
@@ -38,7 +37,7 @@ describe("jQuery", function () {
 				var myCallback = jasmine.createSpy();
 				elem2.hide(500, myCallback);
 				
-				waits(500);
+				waits(600);
 				
 				runs(function() {
 					expect(myCallback).toHaveBeenCalled();

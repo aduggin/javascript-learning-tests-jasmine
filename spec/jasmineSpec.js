@@ -570,14 +570,14 @@ describe("expect(elem).toBeEmpty()", function () {
 
             });
         });
-
+/*
         describe("expect(x).toBeCompact();", function () {
             it("passes if ", function () {
                 expect().toBeCompact();
                 expect().not.toBeCompact();
             });
         });
-/*
+
         describe("expect(x).toBeFlat();", function () {
             it("passes if ", function () {
                 expect().toBeFlat();
