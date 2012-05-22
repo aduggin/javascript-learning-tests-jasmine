@@ -1,0 +1,3 @@
+describe("Infinity", function () {
+    
+});
