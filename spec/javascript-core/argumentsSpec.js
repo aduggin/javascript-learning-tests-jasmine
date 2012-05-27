@@ -102,9 +102,25 @@ describe("Arguments", function () {
 	});
 	
 	it("turn the arguments object into an array", function () {
-	
-	
-	
-	
+		(function someFunction() {
+			var args = Array.prototype.slice.call(arguments);
+
+			expect(args).toBeArray();
+			expect(args.reverse()).toEqual([6,5,4,3,2,1]);
+			
+		})(1,2,3,4,5,6)		
 	});
+	
+	it("turn the arguments object into an array using [] instead of Array.prototype", function () {
+		(function someFunction() {
+			var args = [].slice.call(arguments);
+			
+			expect(args).toBeArray();
+			expect(args.reverse()).toEqual([6,5,4,3,2,1]);
+			
+		})(1,2,3,4,5,6)		
+	});
+	
+	
+	
 });
