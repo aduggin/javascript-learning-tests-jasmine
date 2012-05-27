@@ -13,8 +13,9 @@ describe("Regular Expressions", function () {
 	describe("PROPERTIES", function () {
 	    describe("global", function () {
 			it('Whether the RegEx has the "g" attribute', function () {
-				var regEx = /foo/i;
-				expect(regEx.global).toEqual(false);
+				var regEx = /foo/g;
+				expect(regEx.global).toEqual(true);
+				expect(regEx.ignoreCase).toEqual(false);
 			});
 		});
 		
@@ -22,6 +23,7 @@ describe("Regular Expressions", function () {
 			it('Whether the RegEx has the "i" attribute', function () {
 				var regEx = /foo/i;
 				expect(regEx.ignoreCase).toEqual(true);
+				expect(regEx.global).toEqual(false);
 			});
 		});
 		
