@@ -1,3 +1,5 @@
+/*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent, myArray  */
+/*jslint	sloppy: true  */
 describe("Arguments", function () {
 	
 	function demo(a, b, c, d, e) {
@@ -120,7 +122,4 @@ describe("Arguments", function () {
 			
 		})(1,2,3,4,5,6)		
 	});
-	
-	
-	
 });

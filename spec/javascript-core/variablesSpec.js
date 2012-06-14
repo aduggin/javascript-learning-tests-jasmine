@@ -1,3 +1,5 @@
+/*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent, myArray  */
+/*jslint	sloppy: true  */
 describe("Variable", function () {
     //declare a variable
 

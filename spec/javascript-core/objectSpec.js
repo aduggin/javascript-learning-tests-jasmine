@@ -1,3 +1,5 @@
+/*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent, myArray  */
+/*jslint	sloppy: true  */
 describe("Objects", function () {
 	
 	describe("OVERVIEW", function () {
@@ -126,7 +128,7 @@ describe("Objects", function () {
 	});
 	
 	describe("METHODS", function () {
-		// Object.prototype.foo()
+		// Object.prototype.hasOwnProperty()
 	
 	});
 	

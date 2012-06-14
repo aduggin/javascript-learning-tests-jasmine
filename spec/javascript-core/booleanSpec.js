@@ -1,3 +1,5 @@
+/*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent, myArray  */
+/*jslint	sloppy: true  */
 describe("Boolean", function () {
     describe("OVERVIEW", function () {
         it("returns the string 'boolean' from the typeof operator", function () {
