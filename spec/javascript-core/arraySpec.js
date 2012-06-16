@@ -1,5 +1,6 @@
-/*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent, myArray  */
-/*jslint	sloppy: true  */
+/*jslint    sloppy: true, nomen:true  */
+/*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent, myArray, _, console*/
+
 describe("Arrays", function () {
 	
 	describe("OVERVIEW", function () {
@@ -517,7 +518,7 @@ describe("Arrays", function () {
 	
 	describe("EXAMPLES", function () {
 	    
-		it("sorting integers", function () {
+		it("sorting integers by passiing in a custom function to sort()", function () {
 		    var myArray = [1, 22, 12, 2];
 			
 			myArray.sort(function(a, b) {
@@ -526,6 +527,20 @@ describe("Arrays", function () {
 		
 			expect(myArray).toEqual([1, 2, 12, 22]);
 		});
+		
+		it("copying an array by using slice()", function () {
+		    var a = [1, 2, 3, 4],
+				b = a,
+				c = a.slice();
+			
+			// c is an array
+			expect(_.isArray(c)).toBe(true);
+			
+			// c does not reference the same array as a
+			expect(c === a).toEqual(false);
+
+			// but the contents of the 2 arrays are the same
+			expect(a).toEqual(c);
+		});
 	});
-	
 });
