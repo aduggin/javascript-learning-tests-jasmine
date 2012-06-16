@@ -1,7 +1,13 @@
-/*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent, myArray  */
-/*jslint	sloppy: true  */
+/*jslint    sloppy: true, nomen:true  */
+/*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent, myArray, _, console*/
+
 describe("Boolean", function () {
     describe("OVERVIEW", function () {
+		it("there are 2 booleans values, true and false", function () {
+		    expect(true).toBeBoolean();
+			expect(false).toBeBoolean();
+		});
+	
         it("returns the string 'boolean' from the typeof operator", function () {
 	        expect(typeof true).toEqual('boolean');
 			expect(typeof false).toEqual('boolean');
@@ -10,7 +16,7 @@ describe("Boolean", function () {
 			expect(typeof 'false').toEqual('string');
 	    });
     });
-	
+
 	describe("Logical Operators", function () {
 		it("negation converts a boolean to it's opposite value", function () {
 		    expect(!true).toEqual(false);
@@ -25,7 +31,7 @@ describe("Boolean", function () {
 			expect(!!true).toEqual(true);
 			expect(!!'foo').toEqual(true);
 			expect(!!{}).toEqual(true);
-			expect(!!function(){}).toEqual(true);
+			expect(!!function () {}).toEqual(true);
 			expect(!!1).toEqual(true);
 			expect(!!10).toEqual(true);
 
@@ -51,15 +57,15 @@ describe("Boolean", function () {
 			expect(false && true).toEqual(false);
 		});
 	});
-	
+
 	describe("Lazy Evaluation", function () {
-	    
+
 		it("as soon as a result is clear any further operation is not performed", function () {
 	        var b = 5;
 			expect(true || (b = 6)).toEqual(true);
 			expect(b).toEqual(5); // (b = 6) was not performed
-			
-			var b = 5;
+
+			b = 5;
 			expect(false || (b = 6)).toEqual(6);
 			expect(b).toEqual(6); // (b = 6) was performed
 	    });

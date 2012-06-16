@@ -42,6 +42,7 @@ describe("Numbers", function () {
         });
 
         it("decimal fractions are approximate", function () {
+			// example provided in a Douglas Crockfard video
             var a = 0.1,
                 b = 0.2,
                 c = 0.3;
@@ -70,18 +71,30 @@ describe("Numbers", function () {
 
         });
 
-        it("augmenting Number.prototype affects all numbers, including number literals", function () {
-            Number.prototype.isEven = function () {
-                return (this.valueOf() % 2 === 0);
-            };
-
+        it("all numbers inherit from Number.prototype", function () {
             var evenNumber = 10,
                 oddNumber = 7;
+
+			Number.prototype.isEven = function () {
+                return (this.valueOf() % 2 === 0);
+            };
 
             expect(evenNumber.isEven()).toEqual(true);
             expect(oddNumber.isEven()).toEqual(false);
 
         });
+
+		describe("Numbers are first class objects", function () {
+		    
+			// A number can be stored in a varible
+			
+			// A number can be passed as a parameter
+			
+			// A number can be returned from a function
+			
+			// A number can be stored in an object
+		
+		});
 
     });
 
@@ -143,6 +156,10 @@ describe("Numbers", function () {
                 expect(num.toString()).toBeString();
             });
         });
+
+		describe("EXAMPLES", function () {
+			// accurately work with decimals, for emample money, by turning them into whole numbers
+		});
 
     });
 });

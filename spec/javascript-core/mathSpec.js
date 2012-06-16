@@ -1,11 +1,10 @@
 /*jslint    sloppy: true, nomen:true  */
 /*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent, myArray, _, console*/
 
-describe("Date", function () {
+describe("Math", function () {
 	
 	describe("OVERVIEW", function () {
-	    
-		
+	    	
 	});
 
 	describe("PROPERTIES", function () {

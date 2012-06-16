@@ -1,5 +1,6 @@
-/*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent, myArray  */
-/*jslint	sloppy: true  */
+/*jslint    sloppy: true, nomen:true  */
+/*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent, myArray, _, console*/
+
 describe("String", function () {
 
 	describe("OVERVIEW", function () {
@@ -29,10 +30,20 @@ describe("String", function () {
 	
 	});
 /*
-alert('string');
+
 	describe("OVERVIEW", function () {
 		var s = "some characters";
 		expect(typeof s).toEqual('string');
+	});
+
+	describe("STATIC METHODS", function () {
+
+
+		describe("String.fromCharCode()", function () {
+		    it("Creates a new string using the character codes passed as arguments", function () {
+
+		    });
+		});
 	});
 
 	describe("METHODS", function () {
@@ -145,16 +156,6 @@ alert('string');
 		    });
 		});
 
-	});
-
-	describe("STATIC METHODS", function () {
-
-
-		describe("String.fromCharCode()", function () {
-		    it("Creates a new string using the character codes passed as arguments", function () {
-
-		    });
-		});
 	});
 */
 });
