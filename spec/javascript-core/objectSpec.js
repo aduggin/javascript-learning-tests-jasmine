@@ -1,5 +1,6 @@
-/*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent, myArray  */
-/*jslint	sloppy: true  */
+/*jslint    sloppy: true, nomen:true  */
+/*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent, myArray, _, console*/
+
 describe("Objects", function () {
 	
 	describe("OVERVIEW", function () {

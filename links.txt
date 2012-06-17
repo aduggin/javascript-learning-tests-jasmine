@@ -1,0 +1,18 @@
+
+https://sites.google.com/site/tddproblems/all-problems-1
+
+http://matteo.vaccari.name/blog/tdd-resources
+
+How to write clean, testable code:
+[http://www.youtube.com/watch?v=XcT4yYu_TTs]
+
+learning TDD through test-first teaching
+[http://www.ultrasaurus.com/sarahblog/2010/06/learning-tdd-through-test-first-teaching/]
+
+Learning TDD Through Test First Teaching 
+http://www.youtube.com/watch?v=KgfdlZuVz7I
+
+http://davesquared.net/2011/03/why-learning-tdd-is-hard-and-what-to-do.html
+
+http://testfirst.org/
+http://testfirst.org/learn_javascript

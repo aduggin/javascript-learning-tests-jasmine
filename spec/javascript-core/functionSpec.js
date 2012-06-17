@@ -1,5 +1,6 @@
-/*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent, myArray  */
-/*jslint	sloppy: true  */
+/*jslint    sloppy: true, nomen:true  */
+/*global  describe, beforeEach, it, expect, spyOn, $, setFixtures, alert, spyOnEvent, myArray, _, console*/
+
 describe("Functions", function () {
 	describe("OVERVIEW", function () {
 	    function sum(a, b) {
@@ -14,10 +15,6 @@ describe("Functions", function () {
 			return a + b;
 		}
 	
-		it("returns the string 'function' from the typeof operator", function () {
-			expect(typeof sum).toEqual('function'); 
-		});
-		
 		it("are objects", function () {
 		    expect(sum instanceof Object).toBe(true);
 			//console.dir(sum);
@@ -25,6 +22,19 @@ describe("Functions", function () {
 			//console.dir(andAnotherSum);
 		});
 		
+		/*
+			are first class object
+				may be passed as an argument to a function
+				may be returned from a function
+				may be assigned to a variable
+				may be stored in an object or an array
+			
+			inherit fron Function.prototype
+			
+			have methods
+				
+		*/
+	
 		it("parenthesis are used to call/invok a function", function () {
 		    window.sayHello = function() {
 				return 'Hello';
@@ -65,6 +75,10 @@ describe("Functions", function () {
 			
 			expect(foo).not.toBeDefined();
 			expect(flag).toEqual(10);
+		});
+		
+		it("returns the string 'function' from the typeof operator", function () {
+			expect(typeof sum).toEqual('function'); 
 		});
 		
 		it("variables set inside a function are not accessible outside the function", function () {
